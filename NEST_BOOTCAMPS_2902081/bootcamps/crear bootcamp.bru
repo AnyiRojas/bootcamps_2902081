@@ -6,6 +6,21 @@ meta {
 
 post {
   url: http://localhost:3000/bootcamps
-  body: none
+  body: json
   auth: none
+}
+
+headers {
+  ~Content-Type: application/json
+}
+
+body:json {
+  {
+    "name" : "FUNDAMENTOS DE PYTHON",
+    "phone" : 42545243 ,
+    "averageRating" : 3 , 
+    "address" : "Calle 52 13 65" ,
+    "topics" : "IA, ANALITICA DE DATOS" ,
+    "createdAt" : "2024-11-06"
+  }
 }

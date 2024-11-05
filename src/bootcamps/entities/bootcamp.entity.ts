@@ -1,20 +1,26 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Bootcamp {
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @PrimaryGeneratedColumn()
-    id: number
+  @Column({ type: "integer", nullable: true })
+  phone: number;
 
-    @Column()
-    phone: number
+  @Column({ type: "varchar", nullable: false})
+  name: string;
 
-    @Column()
-    name: string
+  @Column({ name: 'average_rating' })
+  averageRating: number;
 
-    @Column({ name: 'average_rating' })
-    averageRating: number
+  @Column({ type: "varchar", nullable: false})
+  address: string;
 
-    
+  @Column({ type: "varchar"})
+  topics: string;
 
+  @Column ({ type: "timestamp", default: () => "CURRENT_TIMESTAMP", name: "created_at"})
+  createdAt: Date;
+  
 }
